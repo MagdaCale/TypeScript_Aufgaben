@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="../style.css">
     <script src="script.ts"></script>
     <style>
+        section {
+            width: 50%;
+            background-color: rgba(173, 173, 173, 0.209);
+            padding: 3rem;
+            border-radius: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
         div {
             margin: 2rem 0;
         }
@@ -19,7 +27,7 @@
 
         span {
             font-weight: bold;
-            color: blue;
+            color: rgb(200, 255, 0);
         }
     </style>
 </head>
@@ -30,23 +38,27 @@
 
     <pre>⬇️ Browserkonsole öffnen</pre>
 
-    <div>
-        <h2>Was macht der %-Operator?</h2>
-        <p> Der %-Operator (auch Modulo genannt) gibt den Rest einer Division zurück. Er zeigt, was übrig bleibt,
-            nachdem der erste Operand (der Dividend) durch den zweiten Operand (den Divisor) geteilt wurde.
-            <br>
-            <span>Wichtig:
-                Der Rest hat immer das Vorzeichen des Dividenden (dem ersten Operand).</span>
-        </p>
-    </div>
+    <section>
+        <div>
+            <h2>Was macht der %-Operator?</h2>
+            <p> Der %-Operator (auch Modulo genannt) gibt den Rest einer Division zurück. Er zeigt, was übrig bleibt,
+                nachdem der erste Operand (der Dividend) durch den zweiten Operand (den Divisor) geteilt wurde.
+                <br>
+                <span>Wichtig:
+                    Der Rest hat immer das Vorzeichen des Dividenden (dem ersten Operand).</span>
+            </p>
+        </div>
 
-    <div>
-        <h3>Wichtig zu merken:</h3>
-        <ul>
-            <li>Der %-Operator ist kein mathematisches Modulo, sondern ein Rest-Operator. Das bedeutet, das Vorzeichen
-                wird immer vom Dividend übernommen.</li>
-        </ul>
-    </div>
+        <div>
+            <h3>Wichtig zu merken:</h3>
+            <ul>
+                <li>Der %-Operator ist kein mathematisches Modulo, sondern ein Rest-Operator. Das bedeutet, das
+                    Vorzeichen
+                    wird immer vom Dividend übernommen.</li>
+            </ul>
+        </div>
+    </section>
+
 
 
 </body>
