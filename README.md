@@ -21,7 +21,7 @@ Um dieses Projekt zu öffnen und auszuführen, benötigst du:
    git clone <repository-url> .
    cd <projektordner>
    npm install
-   npm run dev``
+   npm run dev
 
 Projektstruktur
 	•	src/: Hier befinden sich alle Übungsdateien.
