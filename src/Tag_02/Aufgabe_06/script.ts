@@ -42,3 +42,19 @@ const ergebnisDrei = toLowerCase
 
 console.log(ergebnisDrei); 
 
+
+
+// --------------------------------------------------------------------
+const ausgabe = document.querySelector("p");
+
+if (ausgabe !== null) {
+    ausgabe.innerHTML = `
+        <p><strong>${toUpperCase}</strong></p>
+        <p><strong>${toLowerCase}</strong></p>
+        <p><strong>${ergebnisEins}</strong></p>
+        <p><strong>${ergebnisZwei}</strong></p>
+        <p><strong>${ergebnisDrei}</strong></p>
+    `;
+}else {
+    console.log("Das Dokument existiert nicht");
+}
