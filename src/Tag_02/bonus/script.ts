@@ -4,7 +4,7 @@
 // - Mit der innerText-Eigenschaft des Elements kannst du nur den Text des Artikels erhalten und mit der innerHTML-Eigenschaft kannst du den HTML-Inhalt des Artikels festlegen.
 // - Du kannst ein span-Element verwenden, um die Wörter hervorzuheben.
 
-const searchButton = document.getElementById("search-button");
+const searchButton = document.getElementById("search-button") as HTMLInputElement;
 
 const clicktoSearch = () => {
     const searchInput = document.getElementById("search-input") as HTMLInputElement; 
@@ -12,9 +12,9 @@ const clicktoSearch = () => {
     // const searchInput = (document.getElementById("search-input") as HTMLInputElement).value
     // ? value direkt bei document abfragen -> vorteil: verkürzte schriebweise und value muss nur einmal abgefragt werden
 
-    let article = document.querySelector("article") as HTMLElement;
+    const article = document.querySelector("article") as HTMLElement;
     const hinweisDiv = document.querySelector("div");
-    const articleText = article.innerText; // ? innerText ignoriert HTML-Tags und such nur den reienten Text
+    const articleText = article.innerText; // ? innerText ignoriert HTML-Tags und such nur den reienten Text der im html dokument gespeichert ist.
     const searchValue = searchInput.value.trim();
 
     // ! Prüfen, ob etwas angegeben wurde
