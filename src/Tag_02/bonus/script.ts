@@ -27,17 +27,14 @@ function clicktoSearch ()  {
     const highlight = `<span class="highlight">${searchValue}</span>`;
 
 
-    // ! Prüfen, ob das Wort im Artikel vorhanden ist
-     // ? wird nur ausgeführt, wenn der erste Teil (article) true ist.
-    
-    //  Wenn das wort im Artikel ist: !true wird false, und der if-Block wird nicht ausgeführt.
+    // ! Prüfen, ob das Wort im Artikel vorhanden ist    
+    //  Wenn das wort im articleText ist: !true wird false, und der if-Block wird nicht ausgeführt.
     if (!articleText.includes(searchValue)) {
         hinweisDiv.innerHTML = `<p class="alert">Das Wort "${searchValue}" ist nicht im Text enthalten</p>`;
         // Wenn das Wort im Artikel nicht vorhanden ist: !false wird true, und der if-Block wird ausgeführt.
         return; // ohne return würde hinweistext dirket gelöscht werden
         }
     
-  
     hinweisDiv.innerText = "";
 
     // ! Ersetzen, wenn Artikel existiert
