@@ -5,7 +5,9 @@ const salesMonth = Math.floor(Math.random() * 12) + 1;
 console.log(salesMonth)
 
 
-
+// - (case 1, 2, 3) führen alle zum gleichen Ergebnis: "1. Quartal"
+// - (case 4, 5, 6) führen alle zum gleichen Ergebnis: "2. Quartal"
+// - usw...
 switch(salesMonth){
     case 1:
     case 2:
