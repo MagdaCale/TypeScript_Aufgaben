@@ -10,8 +10,11 @@
 //     - Wenn isAdult false ist soll ein window.alert ausgeben werden “Keine Berechtigung” ansonsten ein window.confirm “Willkommen”
 
 
-const isOnline = Math.random() > 0.7
-console.log(isOnline ? 'online' : 'offline');
+const isOnline = (Math.random() > 0.7 ) ? 'online' : 'offline'
+// * isOnline = true (wenn die Zufallszahl > 0.7): 30% Wahrscheinlichkeit.
+// * isOnline = false (wenn die Zufallszahl ≤ 0.7): 70% Wahrscheinlichkeit.
+
+console.log(isOnline );
 
 const isPremiumUser = Math.random() > 0.4  
 
