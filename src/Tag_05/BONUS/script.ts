@@ -19,17 +19,17 @@ function updateScore(): void {
     homeEmoji.innerHTML = "";
     awayEmoji.innerHTML = "";
 
-    // Dynamische Logik für GIFs
-    if (homeScore === awayScore) {
-        homeEmoji.innerHTML = `<img src="./assets/img/draw.gif" alt="Draw">`;
-        awayEmoji.innerHTML = `<img src="./assets/img/draw.gif" alt="Draw">`;
-    } else if (homeScore > awayScore) {
-        homeEmoji.innerHTML = `<img src="./assets/img/iWon.gif" alt="Winner">`;
-        awayEmoji.innerHTML = `<img src="./assets/img/iLost.gif" alt="Loser">`;
-    } else {
-        homeEmoji.innerHTML = `<img src="./assets/img/iLost.gif" alt="Loser">`;
-        awayEmoji.innerHTML = `<img src="./assets/img/iWon.gif" alt="Winner">`;
-    }
+   
+    if (homeScore === awayScore && homeScore > 0 && awayScore > 0){  
+            homeEmoji.innerHTML = `<img src="./assets/img/draw.gif" alt="Draw">`;
+            awayEmoji.innerHTML = `<img src="./assets/img/draw.gif" alt="Draw">`
+        }else if (homeScore > awayScore) {
+            homeEmoji.innerHTML = `<img src="./assets/img/iWon.gif" alt="Winner">`;
+            awayEmoji.innerHTML = `<img src="./assets/img/iLost.gif" alt="Loser">`;
+        } else {
+            homeEmoji.innerHTML = `<img src="./assets/img/iLost.gif" alt="Loser">`;
+            awayEmoji.innerHTML = `<img src="./assets/img/iWon.gif" alt="Winner">`;
+        }
 }
 
 // - Funktion: fügt Punkte zur Home Crew hinzu
@@ -50,7 +50,11 @@ function addAwayPoints(points: number): void {
 function resetScore(): void {
     homeScore = 0;
     awayScore = 0;
+    
     updateScore();
+    
+    homeEmoji.innerHTML = "";
+    awayEmoji.innerHTML = "";
 }
 
 
