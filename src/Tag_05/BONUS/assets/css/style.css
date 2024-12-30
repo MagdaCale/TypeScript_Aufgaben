@@ -1,0 +1,172 @@
+@font-face{
+    font-family: "Orbitron";
+    src: url("../font/Orbitron-regular.ttf");
+}
+
+@font-face{
+    font-family: "blox";
+    src: url("../font/Blox2.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Orbitron";
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+    /* max-width: 600px; */
+    align-items: center;
+}
+
+.team {
+    background-color: #333;
+    text-align: center;
+    border-radius: 10px;
+    margin: 50px;
+    padding: 20px;
+    width:100vw;
+    outline-offset: 2rem;
+}
+
+.home{
+    outline: 2px solid #00ffc3;
+}
+.away{
+    outline: 2px solid #4800ff;
+}
+
+.score {
+    font-size: 5rem;
+    background-color: #000;
+    color: #ff0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-family: "blox";
+
+}
+
+#home-emoji, #away-emoji{
+    position: relative; 
+    width: 100%; 
+    max-width: auto; 
+    height: auto;
+    overflow: hidden; 
+    text-align: center; 
+    margin-block-start: 50px;
+}
+
+.gif-container {
+    position: relative;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+   
+    border-radius: 8px;
+}
+
+.gif-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 150px;
+    border-radius: 8px;
+}
+
+.label {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    position: relative;
+}
+
+
+.label>p{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+p span{
+    background-color: #333;
+    padding: 5px;
+    color:yellow;
+    font-size: 2rem;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0px 11px 7px 0px rgba(0, 0, 0, 0.01), 
+    0px 7px 7px 0px rgba(0, 0, 0, 0.04), 
+    0px 4px 6px 0px rgba(0, 0, 0, 0.10), 
+    0px 2px 4px 0px rgba(0, 0, 0, 0.26), 
+    0px 0px 2px 0px rgba(0, 0, 0, 0.29), 
+    0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset;
+    transition: background-color 0.3s ease;
+}
+
+/* Grüne Buttons */
+button.green {
+    background-color: #00ffc3;
+    color: white;
+}
+
+button.green:active {
+    box-shadow: none;
+}
+
+/* Blaue Buttons */
+button.blue {
+    background-color: #4800ff;
+    color: white;
+}
+
+button.blue:active {
+    box-shadow: none;
+}
+
+/* Reset Button */
+.reset-continer{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.reset-btn {
+    background-color: black;
+    color: yellow;
+}
+.reset-btn:hover {
+    background-color: yellow;
+    color: black;
+}
+
+
