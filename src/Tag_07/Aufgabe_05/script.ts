@@ -1,25 +1,19 @@
 
-// - Wer hinzufügt, der muss es auch wieder entfernen können. Dafür wird die Array-Methode **pop()** genutzt. Bei pop() wird der letzte Wert von einem Array entfernt und der entfernte Wert wird zurückgegeben.
-// - Nutze wieder einmal die Arrays aus der vorherigen Übung. Entferne jeweils einen Wert aus deinen Arrays und lasse dir den entfernten Wert in der Konsole ausgeben.
-// - Zur besseren Darstellung kannst du dir das Array vor dem pop() ausgeben lassen, dann den entfernten Wert und dann das Array nochmal. Schau dir die Ergebnisvorschau an.
+const ausgabe = document.querySelector("div") as HTMLDivElement;
 
 
-const piratenCrew = ["Jack Sparrow", "Will Turner", "Davy Jones", "Black Beard", "Anne Bonny"];
-const ships = ["Black Pearl", "Flying Dutchman", "Flying Dutchman", "Queen Anne's Revenge", "Revenge"]
-const type = ["Frigate", "Ghost Ship", "Ghost Ship", "Man-O'-War", "Sloop"]
 
-console.log(piratenCrew); // ["Jack Sparrow", "Will Turner", "Davy Jones", "Black Beard", "Anne Bonny"]
-console.log(ships);
-console.log(type);
+const drinks = ['fritz-kola', 'Apfelsaft', 'Pepsi', 'Traubensaft', 'Sprite', 'Orangensaft', 'Red Bull Energy Drink', 'Fanta']
 
-const piratenCrewPop = piratenCrew.pop();   
-const shipsPop = ships.pop();
-const typePop = type.pop();
+const upperDrinks = drinks.map((drink) => drink.toUpperCase())
 
-console.log(piratenCrewPop); // "Anne Bonny"
-console.log(shipsPop); // "Revenge"
-console.log(typePop); // "Sloop"
+if(ausgabe !== null){
+    ausgabe.innerHTML = `
+        <p>I like <span>${upperDrinks[2]}</span></p>
+        <p>I like <span>${upperDrinks[4]}</span></p>
+        <p>I like <span>${upperDrinks[7]}</span></p>
+        <p>I like <span>${upperDrinks[0]}</span></p>
+    `
+     
+}
 
-console.log(piratenCrew); 
-console.log(ships);
-console.log(type);
