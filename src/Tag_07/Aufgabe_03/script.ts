@@ -1,9 +1,39 @@
-// - Jetzt kannst du Arrays erstellen und deren einzelne Werte ausgeben.
-// - Um die Anzahl der Werte in einem Array zu ermitteln, kannst du [length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global%5FObjects/Array/length) verwenden.
-// - Verwende die length, um zu überprüfen, wie viele Werte sich in deinen Arrays befinden.
-// - Lasse das Ergebnis in der Konsole (console.log) ausgeben.
-// - Achte darauf, welches Ergebnis dir die Methode in der Konsole anzeigt.
+const ausgabe = document.querySelector("#ausgabe") as HTMLParagraphElement;
+const ausgabe2 = document.querySelector("#ausgabe2") as HTMLParagraphElement;
 
-const piratenCrew = ["Jack Sparrow", "Will Turner", "Davy Jones", "Black Beard", "Anne Bonny"];
 
-console.log("Die länge des Arrays ist: " + piratenCrew.length); // 5
+const piraten = [
+    "Blackbeard",
+    "Anne Bonny",
+    "Captain Kidd",
+    "Jack Sparrow",
+    "Bartholomew Roberts",
+    "James Flint",
+    "Edward England",
+    "Long John Silver",
+    "Captain Hook",
+    "Mary Read"
+]
+
+console.table(piraten);
+
+
+console.log(piraten.includes("Blackbeard"));
+console.log(piraten.includes("Blackbear"));
+console.log(piraten.includes("blackbear"));
+
+piraten.includes("blackbeard") 
+
+const findePirat = (name: string) => {
+    if(piraten.join(" ").toUpperCase().includes(name.toUpperCase())){
+        console.log(`Pirat "${name}" gefunden`);
+        ausgabe.innerHTML = `Pirat <span>${name}</span> gefunden`
+    } else {
+        console.log(`Pirat "${name}" nicht gefunden`);
+        ausgabe2.innerHTML = `Pirat <span>${name}</span> nicht gefunden`
+    }
+}
+
+findePirat("blackbeard")
+findePirat("blaceard")
+findePirat("james flint")
