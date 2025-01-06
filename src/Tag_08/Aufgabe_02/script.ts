@@ -484,7 +484,13 @@ const minAndMaxTemaprature = ({data}: Weather)=>{
 
 }
 
+// ! Destrukturierung
+// - liefert ein Objekt zurück, das mindestens die Eigenschaften min und max enthält.
+// ? der Originalname der Eigenschaft (min, max) wird auf neue Namen (minWeather, maxWeather) gemappt.
+// ? Das Destrukturieren greift auf das zurückgegebene Objekt der Funktion zu
+// * Die Funktion minAndMaxTemperature liefert nur das Objekt { min, max }. Das Mapping von min → minWeather und max → maxWeather passiert durch das Destrukturieren und hat nichts mit der Funktion selbst zu tun.
+// * Die Funktion verwendet den Parameter weather(Array). Innerhalb der Funktion wird dieser Parameter genutzt, um das min und max zu berechnen. Die Destrukturierung findet erst nach der Rückgabe der Funktion statt.
 const {min: minWeather, max: maxWeather} = minAndMaxTemaprature(weather)
 
 console.log(`Die niedriste Temaparatur was ${minWeather}°C und die höchste Temperatur war ${maxWeather}°C`)
-console.log(minWeather, maxWeather)
+console.log(minWeather, maxWeather);
