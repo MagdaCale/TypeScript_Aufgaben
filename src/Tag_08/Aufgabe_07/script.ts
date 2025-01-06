@@ -30,10 +30,15 @@ const singers: Singer[] = [
 
 console.log(singers);
 
+// - kürzer und ohne if
+// const localeCompare = [...singers].sort((a, b) => a.name.localeCompare(b.name));
+// const localeCompare2 = [...singers].sort((a,b) => a.period_active.start - b.period_active.start)
 
+// console.log(localeCompare);
+// console.log(localeCompare2);
 
-// - sortiert bei name
-// ? => ohne [...singers], motiert singers durch sort() und verändert das ursprungliche Array! 
+// // - sortiert bei name
+// // ? => ohne [...singers], motiert singers durch sort() und verändert das ursprungliche Array! 
 const sortedByName = [...singers].sort((a, b) => {
     if (a.name < b.name) return -1;
     if (a.name > b.name) return 1;
