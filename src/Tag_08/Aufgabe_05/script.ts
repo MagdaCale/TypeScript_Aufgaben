@@ -1,19 +1,38 @@
 
-const ausgabe = document.querySelector("div") as HTMLDivElement;
 
 
+type Lager = {
+    schreibtisch: {
+        schublade: string;
+    };
+    schrank: {
+        "Obere Schublade": {
+            Ordner1: string;
+            Ordner2: string;
+        };
+        "Untere Schublade": string;
+    };
+};
 
-const drinks = ['fritz-kola', 'Apfelsaft', 'Pepsi', 'Traubensaft', 'Sprite', 'Orangensaft', 'Red Bull Energy Drink', 'Fanta']
+const unserLager: Lager = {
+    schreibtisch: {
+        schublade: "Hefter"
+    },
+    schrank: {
+        "Obere Schublade": {
+            Ordner1: "Dokumente",
+            Ordner2: "Geheimnisse"
+        },
+        "Untere Schublade": "Cola"
+    }
+};
 
-const upperDrinks = drinks.map((drink) => drink.toUpperCase())
 
-if(ausgabe !== null){
-    ausgabe.innerHTML = `
-        <p>I like <span>${upperDrinks[2]}</span></p>
-        <p>I like <span>${upperDrinks[4]}</span></p>
-        <p>I like <span>${upperDrinks[7]}</span></p>
-        <p>I like <span>${upperDrinks[0]}</span></p>
-    `
-     
-}
+// - Geheimnisse
+// - Cola
+// - Hefter
+
+console.log(unserLager.schrank["Obere Schublade"].Ordner2);
+console.log(unserLager.schrank["Untere Schublade"]);
+console.log(unserLager.schreibtisch.schublade);
 

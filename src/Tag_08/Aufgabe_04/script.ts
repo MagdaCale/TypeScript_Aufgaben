@@ -1,95 +1,57 @@
 
-const artworks: string[] = [
-    "Die Sternennacht - Vincent van Gogh",
-    "Guernica - Pablo Picasso",
-    "Die Geburt der Venus - Sandro Botticelli",
-    "Die Nachtwache - Rembrandt",
-    "Die Mona Lisa - Leonardo da Vinci",
-    "Die Kartoffelesser - Vincent van Gogh",
-    "Der Schrei - Edvard Munch",
-    "Das letzte Abendmahl - Leonardo da Vinci",
-    "Die freudige Botschaft - James Tissot",
-    "Der Garten der Lüste - Hieronymus Bosch"
-]
 
-const artworkDates: string[] =  [
-    "Die Sternennacht - 1889",
-    "Guernica - 1937",
-    "Die Geburt der Venus - 1486",
-    "Die Nachtwache - 1642",
-    "Die Mona Lisa - 1503",
-    "Die Kartoffelesser - 1885",
-    "Der Schrei - 1893",
-    "Das letzte Abendmahl - 1495",
-    "Die freudige Botschaft - 1885",
-    "Der Garten der Lüste - 1505"
-]
 
-const splitName = artworks.map((name) => name.split(" - "));
-console.log(splitName);
-
-const splitDate = artworkDates.map((date) => date.split(" - "));
-console.log(splitDate);
-
-// - nach dem split() wird ein Array von Arrays erzeugt
-// const splitName = [
-//     ["Die Sternennacht", "Vincent van Gogh"],
-//     ["Guernica", "Pablo Picasso"]
-//   ]
+type Pet = {
+    tiertyp: string;
+    namen: string[];
+};
   
-//   const splitDate = [
-//     ["Die Sternennacht", "1889"],
-//     ["Guernica", "1937"]
-//   ]
-
-
-const artworkkName = (name: string)  => {
-
-    // -  find((el) => el.includes(name)) suchst nach dem Eintrag, der den Teilstring name enthält.
-    // - el (element) repräsentiert ein Array wie ["Die Sternennacht", "Vincent van Gogh"], welches vorher durch splitName definiert wurde.
-    const artwork =  splitName.find((el) => el.includes(name))
-    const artworkDates =  splitDate.find((el) => el.includes(name))
-
-    if(artwork && artworkDates) {
-        console.log(`"${artwork[0]}" wurde von ${artwork[1]}im Jahre ${artworkDates[1]} gemalt`);
-    } else {
-        console.log(`Artwork "${name}" nicht gefunden`);
+const unsereHaustiere: Pet[] = [
+    {
+      tiertyp: 'Katze',
+      namen: ['Gipsy', 'Nala', 'Dinky']
+    },
+    {
+      tiertyp: 'Hunde',
+      namen: ['Knöpfchen', 'Pinselchen', 'Droopy']
     }
+];
 
-}
+// - Greife auf die Werte "Nala" und "Droopy" in diesem Array von Objekten zu und lasse sie dir auf der Konsole ausgeben.
+console.log(unsereHaustiere[0].namen[1]);
+console.log(unsereHaustiere[1].namen[2]);
 
-artworkkName("Der Garten der Lüste");
-artworkkName("Der Garten deste");
-
-
-// ! Stefans CODE
-
-// const splitName1 = artworks.map((name) => name.split(" - "));
-// const splitDate2 = artworkDates.map((date) => date.split(" - "));
+// - Lasse dir einmal alle Hundenamen anzeigen.
+console.log(unsereHaustiere[1].namen);
 
 
-function findArtowrk(name: string){
-    const entryWithArtist = artworks.find(([elementName, artist]) => {
+// const changePetName = (pet: Pet) => {
+//     const Pinky = 'Pinky';
+//     pet.namen[2] =  Pinky
+// };
 
-       return elementName[0] === artist
-    })
+// changePetName(unsereHaustiere[0]);
+// console.log(unsereHaustiere[0].namen); 
 
-    const entryWithYear = artworkDates.find((element) => {
+    
+// - Ändere folgende Werte:
+//     - Droopy in Snoppy
+//     - Dinky in Pinky
 
-        return element[1] === name
-    })
+const changePetName = (pet: Pet, neuerName: string) => {
+    pet.namen[2] = neuerName; // Ändert den dritten Namen zu "neuerName" also der, der in changePetName("xyz)" angegeben wird
+};
 
-    if(entryWithArtist && entryWithYear){
-        artworks.map((name) => name.split(" - "));
-        console.log(`"${name}" wurde von ${entryWithArtist[1]}im Jahre ${entryWithYear[1]} gemalt`);
-    }else{
-        artworkDates.map((date) => date.split(" - "));
-        console.log(`Artwork "${name}" nicht gefunden`);
+changePetName(unsereHaustiere[0], 'Pinky'); 
+changePetName(unsereHaustiere[1], 'Snoopy'); 
 
-    }
+console.log(unsereHaustiere[0].namen); 
+console.log(unsereHaustiere[1].namen);
 
-    console.log(entryWithArtist);
-    console.log(entryWithYear);
-}
 
-findArtowrk("Der Garten der Lüste");
+// - Erstelle ein weiteres Objekt vom Typ Pet, z. B. Hamster
+// - Füge das Objekt im Array hinzu
+const hamster = {tiertyp: 'Hamster',namen: ['Kid', 'Killer', 'Haks'] }
+
+unsereHaustiere.push(hamster);
+console.log(unsereHaustiere);

@@ -1,39 +1,35 @@
-const ausgabe = document.querySelector("#ausgabe") as HTMLParagraphElement;
-const ausgabe2 = document.querySelector("#ausgabe2") as HTMLParagraphElement;
 
 
-const piraten = [
-    "Blackbeard",
-    "Anne Bonny",
-    "Captain Kidd",
-    "Jack Sparrow",
-    "Bartholomew Roberts",
-    "James Flint",
-    "Edward England",
-    "Long John Silver",
-    "Captain Hook",
-    "Mary Read"
-]
+type Apple = {
+    color: string;
+    size: string;
+    isSweet: boolean
+};
+  
+const redApple: Apple = { color: 'red', size: 'big', isSweet: true };
+const greenApple: Apple = { color: 'green', size: 'small',isSweet: false };
+const yellowApple: Apple = { color: 'yellow', size: 'big',isSweet: true  };
+const apples: Apple[] = [redApple, greenApple, yellowApple];
 
-console.table(piraten);
+// - Nutze forEach, um nur die Größen aller Äpfel in der Konsole auszugeben
+apples.forEach(apples => console.log(apples.size));
+
+// - Nutze forEach, um die Farbe jedes Apfels auf der Konsole auszugeben
+apples.forEach(apples => console.log(apples.color));
+
+// - Verwende den Befehl length, um die Anzahl der Äpfel auszugeben
+const appleLength: number = apples.length;
+console.log(appleLength);
+
+// - Erstelle selbst ein Objekt pinkApple vom Typ Apple und pushe es in das apples-Array
+const pinkApple: Apple = { color: 'pink', size: 'small', isSweet: true  };
+apples.push(pinkApple)
+console.log(apples);
 
 
-console.log(piraten.includes("Blackbeard"));
-console.log(piraten.includes("Blackbear"));
-console.log(piraten.includes("blackbear"));
+// - Füge eine neue Eigenschaft isSweet vom Typ boolean zum Typ Apple hinzu
+// - Schau dir die Fehlermeldungen an und füge bei jedem Apple-Objekt die Eigenschaft isSweet hinzu
 
-piraten.includes("blackbeard") 
+const allApples: Apple[] = [redApple, greenApple, yellowApple, pinkApple];
 
-const findePirat = (name: string) => {
-    if(piraten.join(" ").toUpperCase().includes(name.toUpperCase())){
-        console.log(`Pirat "${name}" gefunden`);
-        ausgabe.innerHTML = `Pirat <span>${name}</span> gefunden`
-    } else {
-        console.log(`Pirat "${name}" nicht gefunden`);
-        ausgabe2.innerHTML = `Pirat <span>${name}</span> nicht gefunden`
-    }
-}
-
-findePirat("blackbeard")
-findePirat("blaceard")
-findePirat("james flint")
+console.table(allApples);

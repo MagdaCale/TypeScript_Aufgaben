@@ -1,12 +1,52 @@
-const checkNumber: number[] = [
-    18, 16, 80, 51, 47, 38, 95, 42, 68, 61, 34, 51, 20, 17, 56, 31, 100, 6, 5, 30, 74, 97, 28, 99, 91, 27, 73, 12, 92, 6, 27, 71, 26, 15, 78
+// - Du hast Sammlungen deiner Lieblingsbands. Du möchtest sie alphabetisch sortieren.
+// - Sortiere die Bands aus dem Code-Snippet alphabetisch nach Namen.
+// - Sortiere anschließend die Bands aufsteigend nach dem Karrierebeginn (period_active.start).
+// - Gib das Ergebnis in der Konsole aus.
+// - **Bitte halte dich an den Typescript-Standard.**
+
+type PeriodActive = {
+    start: number;
+    end: number | string;
+    extra?: number;
+};
+
+type Singer = {
+    name: string;
+    country: string;
+    period_active: PeriodActive;
+    genre: string;
+};
+
+const singers: Singer[] = [
+    { name: 'The Beatles', country: 'United Kingdom', period_active: { start: 1960, end: 1970 }, genre: "Rock / Pop" },
+    { name: 'Elvis Presley', country: 'United States', period_active: { start: 1954, end: 1977 }, genre: "Rock and roll" },
+    { name: 'Michael Jackson', country: 'United States', period_active: { start: 1964, end: 2009 }, genre: "Pop / Rock / Dance / Soul / R&B" },
+    { name: 'Elton John', country: 'United Kingdom', period_active: { start: 1964, end: "present" }, genre: "Pop / Rock" },
+    { name: 'Madonna', country: 'United States', period_active: { start: 1979, end: "present" }, genre: "Pop / Dance / Electronica" },
+    { name: 'Led Zeppelin', country: 'United Kingdom', period_active: { start: 1968, end: 1980 }, genre: "Hard rock / Blues rock / Folk rock" },
+    { name: 'Rihanna', country: 'United States', period_active: { start: 2005, end: "present" }, genre: "R&B / Pop / Dance / Hip-hop" },
+    { name: 'Pink Floyd', country: 'United Kingdom', period_active: { start: 1965, end: 1996, extra: 2014 }, genre: "Progressive rock / Psychedelic rock" },
 ];
 
-const checkNumberDurchDrei = checkNumber.map((num )=>{
-    if(num % 3 === 0){
-        return num + 100
-    }else{
-        return num
-    }
-})
-console.log(checkNumberDurchDrei);
+console.log(singers);
+
+
+
+// - sortiert bei name
+// ? => ohne [...singers], motiert singers durch sort() und verändert das ursprungliche Array! 
+const sortedByName = [...singers].sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+});
+
+console.log(sortedByName);
+
+// - sortiert bei period_active
+const sortedByStartYear = [...singers].sort((a, b) => {
+    if (a.period_active.start < b.period_active.start) return -1;
+    if (a.period_active.start > b.period_active.start) return 1;
+    return 0;
+});
+
+console.log(sortedByStartYear);
