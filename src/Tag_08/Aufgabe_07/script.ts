@@ -31,7 +31,9 @@ const singers: Singer[] = [
 console.log(singers);
 
 // - kürzer und ohne if
-// const localeCompare = [...singers].sort((a, b) => a.name.localeCompare(b.name));
+// const localeCompare = [...singers].sort((a, b) => a.name.localeCompare(b.name)); 
+
+// - localeCompare() => vergleicht die String-Darstellung und es wird die alphabetische Reihenfolge verwendet, nicht die numerische.
 // const localeCompare2 = [...singers].sort((a,b) => a.period_active.start - b.period_active.start)
 
 // console.log(localeCompare);
