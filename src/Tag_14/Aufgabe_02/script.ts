@@ -7,7 +7,7 @@ const circle5 = document.querySelector("#circle5") as HTMLDivElement;
 const circle6 = document.querySelector("#circle6") as HTMLDivElement;
 const circle7 = document.querySelector("#circle7") as HTMLDivElement;
 const circle8 = document.querySelector("#circle8") as HTMLDivElement;
-
+const title = document.querySelector("#title") as HTMLHeadingElement;
 
 // Funktion, um die Hintergrundfarbe zu ändern
 function changeBackground(color: string): void {
@@ -16,17 +16,39 @@ function changeBackground(color: string): void {
 }
 
 // Füge Event-Listener für jeden Kreis hinzu
-circle1.addEventListener("click", () => changeBackground("#0eec7d"));
-circle2.addEventListener("click", () => changeBackground("#e25f2b"));
+circle1.addEventListener("click", () => {
+    changeBackground("#0eec7d");
+    title.style.color = "#e25f2b";
+});
+circle2.addEventListener("click", () => {
+    changeBackground("#e25f2b");
+    title.style.color = "#0eec7d";
+});
+circle3.addEventListener("click", () => {
+    changeBackground("#ffff00");
+    title.style.color = "#800080";
+});
+circle4.addEventListener("click", () => {
+    changeBackground("#800080");
+    title.style.color = "#ffff00";
+});
+circle5.addEventListener("click", () => {
+    changeBackground("#ff7700");
+    title.style.color = "#0000ff";
+});
+circle6.addEventListener("click", () => {
+    changeBackground("#0000ff");
+    title.style.color = "#ff7700";
+});
+circle7.addEventListener("click", () => {
+    changeBackground("#ff005d");
+    title.style.color = "#000000";
+});
+circle8.addEventListener("click", () => {
+    changeBackground("#000000");
+    title.style.color = "#ff005d";
+});
 
-circle3.addEventListener("click", () => changeBackground("#ffff00"));
-circle4.addEventListener("click", () => changeBackground("#800080"));
-
-circle5.addEventListener("click", () => changeBackground("#ff7700"));
-circle6.addEventListener("click", () => changeBackground("#0000ff"));
-
-circle7.addEventListener("click", () => changeBackground("#ff005d"));
-circle8.addEventListener("click", () => changeBackground("#000000"));
 
 const clearBackground = () => {
     changeBackground("");
