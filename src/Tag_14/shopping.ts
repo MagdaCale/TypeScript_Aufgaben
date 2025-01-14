@@ -37,83 +37,83 @@ const preiseKaufland = [
     }
 ]
 
-const preiseRewe = [
-    {
-      "name": "Gurken",
-      "price": 7.14
-    },
-    {
-      "name": "Paprika",
-      "price": 3.4
-    },
-    {
-      "name": "Mandelmilch",
-      "price": 3.92
-    },
-    {
-      "name": "Leinöl",
-      "price": 6.66
-    },
-    {
-      "name": "Waldhonig",
-      "price": 2.77
-    },
-    {
-      "name": "Kaffee",
-      "price": 3.58
-    },
-    {
-      "name": "Tofu",
-      "price": 2.35
-    },
-    {
-      "name": "Blaubeeren",
-      "price": 4.12
-    },
-    {
-      "name": "Zahnseide",
-      "price": 5.05
-    }
-]
+// const preiseRewe = [
+//     {
+//       "name": "Gurken",
+//       "price": 7.14
+//     },
+//     {
+//       "name": "Paprika",
+//       "price": 3.4
+//     },
+//     {
+//       "name": "Mandelmilch",
+//       "price": 3.92
+//     },
+//     {
+//       "name": "Leinöl",
+//       "price": 6.66
+//     },
+//     {
+//       "name": "Waldhonig",
+//       "price": 2.77
+//     },
+//     {
+//       "name": "Kaffee",
+//       "price": 3.58
+//     },
+//     {
+//       "name": "Tofu",
+//       "price": 2.35
+//     },
+//     {
+//       "name": "Blaubeeren",
+//       "price": 4.12
+//     },
+//     {
+//       "name": "Zahnseide",
+//       "price": 5.05
+//     }
+// ]
 
-const preiseLidl = [
-    {
-      "name": "Gurken",
-      "price": 6.13
-    },
-    {
-      "name": "Paprika",
-      "price": 6.64
-    },
-    {
-      "name": "Mandelmilch",
-      "price": 5.97
-    },
-    {
-      "name": "Leinöl",
-      "price": 4.04
-    },
-    {
-      "name": "Waldhonig",
-      "price": 4.51
-    },
-    {
-      "name": "Kaffee",
-      "price": 3.61
-    },
-    {
-      "name": "Tofu",
-      "price": 4.38
-    },
-    {
-      "name": "Blaubeeren",
-      "price": 7.31
-    },
-    {
-      "name": "Zahnseide",
-      "price": 7.54
-    }
-]
+// const preiseLidl = [
+//     {
+//       "name": "Gurken",
+//       "price": 6.13
+//     },
+//     {
+//       "name": "Paprika",
+//       "price": 6.64
+//     },
+//     {
+//       "name": "Mandelmilch",
+//       "price": 5.97
+//     },
+//     {
+//       "name": "Leinöl",
+//       "price": 4.04
+//     },
+//     {
+//       "name": "Waldhonig",
+//       "price": 4.51
+//     },
+//     {
+//       "name": "Kaffee",
+//       "price": 3.61
+//     },
+//     {
+//       "name": "Tofu",
+//       "price": 4.38
+//     },
+//     {
+//       "name": "Blaubeeren",
+//       "price": 7.31
+//     },
+//     {
+//       "name": "Zahnseide",
+//       "price": 7.54
+//     }
+// ]
 
 
 
