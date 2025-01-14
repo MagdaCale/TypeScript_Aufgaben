@@ -1,38 +1,16 @@
-const eingabe = document.querySelector("#eigabeZahl") as HTMLInputElement
-const outputDiv = document.querySelector("#ergebnis") as HTMLDivElement
-
-const button = document.querySelector("#btn") as HTMLButtonElement
+// - Du hast ein Array aus Zahlen und möchtest herausfinden, durch welche Zahlen sie (außer durch eins und sich selbst) teilbar sind.
+// - Schreibe das Ergebnis in dein HTML.
 
 
-button.addEventListener("click", () => {
-    const userInput = Number(eingabe.value); 
-    outputDiv.innerHTML = ""; 
+const output = document.querySelector('#ergebnis') as HTMLDivElement;
 
-    if (userInput === 0) {
-        outputDiv.innerHTML = `<p>Fehler: Du bist eine Nummer angeben</p>`;
-        return;
-    }
+const numbers: number[] = [5, 22, 15, 100, 55];
 
-    const wordStart = "L";
-    const wordEnd = "p";
-    let middlePart = "";
-
-    if (userInput % 2 === 0) {
-        middlePart = "o".repeat(userInput);
-    } else {
-        for (let i = 0; i < userInput; i++) {
-            middlePart += i % 2 === 0 ? "o" : "0";
+numbers.forEach((number) => {
+    for (let i = 2; i <= number / 2; i++) {
+        if (number % i === 0) {
+            const result = number / i;
+            output.innerHTML += `<p>${number} is dividable by ${i}. The result is: ${result}</p>`;
         }
     }
-
-
-    const finalWord = `${wordStart}${middlePart}${wordEnd}`;
-    outputDiv.innerHTML = `<p>${finalWord}</p>`;
-    outputDiv.style.color = '#22ff98'
 });
-
-document.querySelector("#delete")?.addEventListener('click', () => {
-    outputDiv.innerHTML = ''
-    eingabe.value = ''
-})
-
