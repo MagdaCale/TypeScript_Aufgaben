@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM</title>
+  <script defer src="script.ts"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <a href="../../index.html">Zu den Tagen</a>
+    <h1>Zu den Aufgaben </h1>
+  </header>
+  <pre>⬇️ Browserkonsole öffnen</pre>
+
+
+  <button id="themeswitch">Switch Theme</button>
+  <p id="paragraph" class="text-lg color-green">Paragraph #1</p>
+  <p id="paragraph2">Paragraph #2</p>
+  <input id="input1" type="text" />
+
+  <div>
+    <h3>Meine kleine Einkaufsliste</h3>
+    <form>
+      <input id="shopping-input" type="text" placeholder="Eintrag" />
+      <!-- Button in einem Formular verhaelt sich automatisch wie ein button mit type "submit" -->
+      <button id="shopping-button">Zur Liste hinzufügen</button>
+      <button type="reset" id="shopping-button">Reset</button>
+      <button type="button" id="shopping-delete-button">Delete List</button>
+    </form>
+    <ul id="shopping-list"></ul>
+  </div>
+</body>
+
+</html>

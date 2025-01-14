@@ -1,0 +1,16 @@
+#bower-nest{
+    border: 1px dashed black;
+    width: 200px;
+    height: 200px;
+    display: grid;
+    place-items: center;
+    position: relative
+    
+}
+#bower-trash{
+    border: 1px dashed black;
+}
+
+#bower-nest-icon{
+    font-size: 30px;
+}

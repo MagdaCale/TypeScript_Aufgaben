@@ -1,0 +1,162 @@
+[
+  {
+    "firstName": "Noah",
+    "lastName": "M.",
+    "country": "Schweiz",
+    "continent": "Europa",
+    "age": 19,
+    "language": "JavaScript"
+  },
+  {
+    "firstName": "Maia",
+    "lastName": "S.",
+    "country": "Tahiti",
+    "continent": "Ozeanien",
+    "age": 28,
+    "language": "Python"
+  },
+  {
+    "firstName": "Shufen",
+    "lastName": "L.",
+    "country": "China",
+    "continent": "Asien",
+    "age": 35,
+    "language": "Ruby"
+  },
+  {
+    "firstName": "Sumayah",
+    "lastName": "M.",
+    "country": "Ägypten",
+    "continent": "Afrika",
+    "age": 30,
+    "language": "C#"
+  },
+  {
+    "firstName": "Bobby",
+    "lastName": "B.",
+    "country": "Vereinigte Staaten",
+    "continent": "Nordamerika",
+    "age": 25,
+    "language": "Java"
+  },
+  {
+    "firstName": "Giovanni",
+    "lastName": "R.",
+    "country": "Italien",
+    "continent": "Europa",
+    "age": 42,
+    "language": "C++"
+  },
+  {
+    "firstName": "Samantha",
+    "lastName": "W.",
+    "country": "Australien",
+    "continent": "Ozeanien",
+    "age": 31,
+    "language": "Swift"
+  },
+  {
+    "firstName": "Hans",
+    "lastName": "G.",
+    "country": "Deutschland",
+    "continent": "Europa",
+    "age": 50,
+    "language": "PHP"
+  },
+  {
+    "firstName": "Sofia",
+    "lastName": "C.",
+    "country": "Argentinien",
+    "continent": "Südamerika",
+    "age": 23,
+    "language": "JavaScript"
+  },
+  {
+    "firstName": "Yuki",
+    "lastName": "T.",
+    "country": "Japan",
+    "continent": "Asien",
+    "age": 27,
+    "language": "Python"
+  },
+  {
+    "firstName": "Lukas",
+    "lastName": "K.",
+    "country": "Österreich",
+    "continent": "Europa",
+    "age": 33,
+    "language": "Ruby"
+  },
+  {
+    "firstName": "Isabella",
+    "lastName": "S.",
+    "country": "Brasilien",
+    "continent": "Südamerika",
+    "age": 29,
+    "language": "Java"
+  },
+  {
+    "firstName": "Maximilian",
+    "lastName": "H.",
+    "country": "Schweiz",
+    "continent": "Europa",
+    "age": 37,
+    "language": "C#"
+  },
+  {
+    "firstName": "Léa",
+    "lastName": "D.",
+    "country": "Frankreich",
+    "continent": "Europa",
+    "age": 26,
+    "language": "Java"
+  },
+  {
+    "firstName": "Ravi",
+    "lastName": "K.",
+    "country": "Indien",
+    "continent": "Asien",
+    "age": 32,
+    "language": "Python"
+  },
+  {
+    "firstName": "Emma",
+    "lastName": "L.",
+    "country": "Kanada",
+    "continent": "Nordamerika",
+    "age": 24,
+    "language": "JavaScript"
+  },
+  {
+    "firstName": "Finn",
+    "lastName": "S.",
+    "country": "Norwegen",
+    "continent": "Europa",
+    "age": 31,
+    "language": "Swift"
+  },
+  {
+    "firstName": "Eva",
+    "lastName": "B.",
+    "country": "Schweden",
+    "continent": "Europa",
+    "age": 29,
+    "language": "PHP"
+  },
+  {
+    "firstName": "Lucas",
+    "lastName": "G.",
+    "country": "Spanien",
+    "continent": "Europa",
+    "age": 27,
+    "language": "JavaScript"
+  },
+  {
+    "firstName": "Lena",
+    "lastName": "W.",
+    "country": "Deutschland",
+    "continent": "Europa",
+    "age": 36,
+    "language": "Python"
+  }
+]
