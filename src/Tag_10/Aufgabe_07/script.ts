@@ -1,9 +1,7 @@
 
 
-const eingabe = document.querySelector("#eigabeZahle") as HTMLInputElement
+const eingabe = document.querySelector("#eigabeZahl") as HTMLInputElement
 const outputDiv = document.querySelector("#ergebnis") as HTMLDivElement
-
-
 
 const button = document.querySelector("#btn") as HTMLButtonElement
 
