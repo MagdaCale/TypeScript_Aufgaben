@@ -52,6 +52,7 @@ circle8.addEventListener("click", () => {
 
 const clearBackground = () => {
     changeBackground("");
+    title.style.color = "";
 }
 
 document.querySelector("#clear")?.addEventListener("click", clearBackground);
