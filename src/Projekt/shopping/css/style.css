@@ -10,19 +10,19 @@ body {
   min-height: 100vh;
 }
 
-header {
-  text-align: center;
-  margin-top: 20px;
-}
 
-header h1 {
+h1 {
+  margin-top: 20px;
+  text-align: center;
   font-size: 24px;
   color: #333;
 }
 
 main {
   text-align: center;
-  max-width: 600px;
+  max-width: 50vw;
+  width: 100%;
+  height: 50vh;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
@@ -67,7 +67,7 @@ main {
   margin-bottom: 20px;
 }
 
-#tag {
+/* #tag {
   background-color: #f08080;
   color: white;
   padding: 5px 10px;
@@ -83,9 +83,9 @@ main {
   margin-left: 5px;
   color: white;
   font-weight: bold;
-}
+} */
 
-.prices {
+#result-area {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -102,15 +102,6 @@ main {
   font-size: 14px;
 }
 
-.price-box:nth-child(2) {
-  background-color: #f08080;
-  color: white;
-}
-
-.price-box:nth-child(3) {
-  background-color: #90ee90;
-  color: white;
-}
 
 .price-box p:first-child {
   font-weight: bold;
@@ -120,4 +111,32 @@ main {
 .price-box p:last-child {
   font-size: 16px;
   font-weight: bold;
+}
+
+
+.product-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.product-list li {
+  background-color: #f08080;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 5px 0;
+  justify-content: space-between;
+}
+
+.product-list li .close {
+  margin-left: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
