@@ -1,22 +1,33 @@
-// Definiere den Typ Monster
-type Killer = {
-    name: string;
-    type: string;
-    health: number;
-    strength: number;
-    speed: number;
-};
+const getInfoBtn = document.querySelector("#getInfoBtn") as HTMLButtonElement;
+const ausgabe = document.querySelector("#ausgabe") as HTMLDivElement;
+const deleteInfoBtn = document.querySelector("#deletInfo") as HTMLButtonElement;
 
-function deadByDaylightKiller(name: string, type: string, health: number = 100, strength: number = 50, speed: number = 25): Killer {
-    return { name, type, health, strength, speed };
+const showWindowData = () => {
+    const browserInfo = window.navigator;
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+    const innerWidth = window.innerWidth;
+    const innerHeight = window.innerHeight;
+    const colorDepth = window.screen.colorDepth;
+    const pixelDepth = window.screen.pixelDepth;
+
+    if (ausgabe) {
+        ausgabe.innerHTML = `
+            <p><strong>Browsername:</strong> ${browserInfo.appName}</p>
+            <p><strong>Betriebssystem:</strong> ${browserInfo.platform}</p>
+            <p><strong>Browser-Version:</strong> ${browserInfo.userAgent}</p>
+            <p><strong>Window Auflösung:</strong> ${screenWidth} x ${screenHeight}</p>
+            <p><strong>Innere Breite/Höhe:</strong> ${innerWidth} x ${innerHeight}</p>
+            <p><strong>Color Depth:</strong> ${colorDepth}</p>
+            <p><strong>Pixel Depth:</strong> ${pixelDepth}</p>
+        `;
+    }
 }
 
-const killer1 = deadByDaylightKiller("The Trapper", "Brute"); 
-const killer2 = deadByDaylightKiller("The Wraith", "Stealth", 90); 
-const killer3 = deadByDaylightKiller("The Huntress", "Ranged", 80, 60); 
-const killer4 = deadByDaylightKiller("The Nurse", "Supernatural", 70, 75, 50); 
+const clearInfoData = () => {
+    if (ausgabe) ausgabe.innerHTML = "";
+}
 
-console.log(killer1);
-console.log(killer2);
-console.log(killer3);
-console.log(killer4);
+
+getInfoBtn?.addEventListener("click", showWindowData);
+deleteInfoBtn?.addEventListener("click", clearInfoData);
