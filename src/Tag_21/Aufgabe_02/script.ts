@@ -55,7 +55,7 @@ fetch("https://rickandmortyapi.com/api/character")
 // Funktion für die Darstellung der Charaktere
 function renderCharacters(characters: Character[]) {
     if (outputDiv) {
-        outputDiv.innerHTML = ""; // Leere den Container vor dem Rendern
+        outputDiv.innerHTML = ""
         characters.forEach((character) => {
             const characterCard = `
             <div class="card">
