@@ -23,19 +23,6 @@ type BirdDetails = {
   songUrl: string
 };
 
-
-
-const birdResponse = await fetch("https://stfnsr-birdmeister.web.val.run/birds");
-const bidsData = await birdResponse.json();
-
-console.log(bidsData);
-
-
-
-
-
-
-
 // fetch ruft die uebergebene URL ab
 fetch("https://stfnsr-birdmeister.web.val.run/birds")
   // falls Daten zurueckkommen, wird das .then-callback aufgerufen

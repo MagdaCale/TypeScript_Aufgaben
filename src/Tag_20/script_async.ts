@@ -32,9 +32,9 @@ const individualBirdPromises = birdsData.map(async (bird) => {
     return singleBirdData  
 })
 
-const individualBirdPromises2 = birdsData.map(async (bird) => {
-   fetch(bird.url).then((response) => response.json())
-})
+// const individualBirdPromises2 = birdsData.map(async (bird) => {
+//    fetch(bird.url).then((response) => response.json())
+// })
 
 const combinedBirdPromise = Promise.all(individualBirdPromises);
 const combinedBirdData = await combinedBirdPromise;
