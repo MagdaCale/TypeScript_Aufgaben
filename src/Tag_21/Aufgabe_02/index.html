@@ -21,8 +21,9 @@
         }
 
         .card:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
         }
 
         img {
@@ -52,7 +53,6 @@
             grid-template-columns: repeat(3, 2fr);
             gap: 16px;
             padding: 16px;
-
         }
     </style>
 
@@ -67,9 +67,9 @@
     <pre>⬇️ Browserkonsole öffnen</pre>
 
 
-    <section>
-        <h1 class="headline">Rick and Morty Characters</h1>
-    </section>
+    <h1 class="headline">Rick and Morty Character</h1>
+    <input type="text" name="" id="searchInput" placeholder="Suche Charakter">
+
 
     <main>
         <article id="output"></article>
