@@ -1,30 +1,45 @@
-
-
-type IToDo = {
-    userId: number;
+type Character = {
     id: number;
-    title: string;
-    completed: boolean;
-}
+    name: string;
+    status: string;
+    species: string;
+    type: string;
+    gender: string;
+    image: string;
+    episode: string[];
+    url: string;
+    created: string;
+};
 
-// fetch("https://jsonplaceholder.typicode.com/todos")
-// .then((res) => res.json())
-// .then ((data: IToDo[]) =>{
-//     console.log(data);
-// })  
+// Container für die Ausgabe
+const outputDiv = document.querySelector<HTMLDivElement>("#output");
 
-
-const todoList = document.querySelector<HTMLUListElement>("#todoList");
-
-fetch("https://jsonplaceholder.typicode.com/todos")
-.then((res) => res.json())
-.then((data: IToDo[]) => {
-    data.sort((a: IToDo, b: IToDo) => a.title.localeCompare(b.title));
-    data.forEach((todo: IToDo) => {
-        const li = document.createElement("li");
-        li.classList.add("todo");
-        // li.style.color = todo.completed ? "green" : "red"; 
-        li.innerHTML = `${todo.completed ? "✅" : "❌"} ${todo.title}`;
-        todoList?.appendChild(li);
+// Abruf der API-Daten
+fetch("https://rickandmortyapi.com/api/character")
+    .then((response) => response.json())
+    .then((data) => {
+        renderCharacters(data.results as Character[]);
+    })
+    .catch((error) => {
+        console.error("Fehler beim Laden der Charaktere:", error);
     });
-});
+
+// Funktion für die Darstellung der Charaktere
+function renderCharacters(characters: Character[]) {
+    if (outputDiv) {
+        characters.forEach((character) => {
+            const characterCard = `
+            <div class="card">
+                <img src="${character.image}" alt="${character.name}">
+                <div class="card-content">
+                    <h3>${character.name}</h3>
+                    <p><strong>Status:</strong> ${character.status}</p>
+                    <p><strong>Species:</strong> ${character.species}</p>
+                    <p><strong>Gender:</strong> ${character.gender}</p>
+                </div>
+            </div>
+            `
+            outputDiv.innerHTML += characterCard;
+        });
+    }
+}
