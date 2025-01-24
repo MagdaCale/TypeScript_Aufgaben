@@ -1,0 +1,145 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+a strong {
+    text-decoration: none;
+    color: inherit;
+}
+
+a strong:hover{
+    cursor: pointer;
+    color: coral;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+}
+
+#searchInput {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #444;
+    border-radius: 5px;
+    background-color: #272727;
+    color: #ffffff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #36abff;
+    box-shadow: 0 0 8px #36abff37;
+}
+
+
+#output {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.card {
+    background-color: #272727;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    max-width: 60rem;
+    height: 200px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+}
+
+.card-content p strong {
+    color: #ffffff;
+}
+
+.character-origin {
+    margin-top: 1rem;
+}
+.character-gender {
+    margin-top: .5rem;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-dot.alive {
+    background-color: #36ff39;
+    animation: glow-green 3s infinite alternate;
+}
+
+.status-dot.dead {
+    background-color: red;
+    animation: glow-red 3s infinite alternate;
+}
+
+.status-dot.unknown {
+    background-color: #919191;
+}
+
+@keyframes glow-green {
+    from {
+        box-shadow: 0 0 1px -1px #36ff39;
+    }
+    to {
+        box-shadow: 0 0 2px 2px #36ff39;
+    }
+}
+
+@keyframes glow-red {
+    from {
+        box-shadow: 0 0 1px -1px #ff2323;
+    }
+    to {
+        box-shadow: 0 0 2px 2px #ff2323;
+    }
+}

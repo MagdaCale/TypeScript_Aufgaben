@@ -6,20 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fetch-level-2_2</title>
     <script type="module" src="script.ts"></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../../style.css">
-    <style>
-        ul {
-            font-size: 30px;
-        }
-
-        li {
-            list-style-type: none;
-        }
-
-        .todo {
-            margin: 5px 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -30,10 +18,15 @@
     </header>
     <pre>⬇️ Browserkonsole öffnen</pre>
 
-    <h1>To-Do Liste</h1>
-    <input type="text" name="" id="searchInput" placeholder="Suche das Todo">
-    <!-- <button id="searchBtn">Suche</button> -->
-    <ul id="todoList"></ul>
+
+    <button id="goToPage1">Go to Page 1</button>
+    <h1 class="headline">Rick and Morty Character</h1>
+    <input type="text" name="" id="searchInput" placeholder="Suche Charakter">
+
+
+    <main>
+        <article id="output"></article>
+    </main>
 
 
 </body>
