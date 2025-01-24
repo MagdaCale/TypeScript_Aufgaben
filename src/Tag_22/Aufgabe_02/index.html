@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch-level-2_2</title>
+    <script type="module" src="script.ts"></script>
+    <link rel="stylesheet" href="../../../style.css">
+    <style>
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: #000000;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            margin: 8px 0;
+        }
+
+        #output {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+            gap: 16px;
+            padding: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Zurück zu allen Aufgaben</a>
+        </nav>
+    </header>
+    <pre>⬇️ Browserkonsole öffnen</pre>
+
+
+    <h1 class="headline">Rick and Morty Character</h1>
+    <input type="text" name="" id="searchInput" placeholder="Suche Charakter">
+
+
+    <main>
+        <article id="output"></article>
+    </main>
+
+</body>
+
+</html>
