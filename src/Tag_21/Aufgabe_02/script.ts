@@ -29,11 +29,12 @@ const searchInput = document.querySelector<HTMLInputElement>("#searchInput");
 fetch("https://rickandmortyapi.com/api/character")
     .then((response) => response.json())
     .then((data: ApiResponse) => {
-        const characters = data.results; // Speichere die Charaktere aus der API in einer Variablen
+        const characters = data.results; 
+        // Speichere die Charaktere aus der API in einer Variablen
 
-        // Initiales Rendern der Charaktere
         renderCharacters(characters);
 
+        
         // EventListener zum Suchen eines Charakters
         searchInput?.addEventListener("input", () => {
             const searchValue = searchInput.value.trim().toLowerCase(); 
@@ -47,6 +48,8 @@ fetch("https://rickandmortyapi.com/api/character")
             )
             renderCharacters(filteredCharacters); // Zeige gefilterte Charaktere an
         })
+
+
     })
     .catch((error) => {
         console.error("Fehler beim Laden der Charaktere:", error);

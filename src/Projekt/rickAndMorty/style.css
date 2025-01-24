@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #1e1e1e;
     font-family: Arial, sans-serif;
@@ -142,4 +146,15 @@ h1 {
     to {
         box-shadow: 0 0 2px 2px #ff2323;
     }
+}
+
+
+.load-container{
+    display: flex;
+    align-items: center;
+    margin: 3rem auto;
+}
+
+#loadCharacter{
+    margin-right: 2rem;
 }

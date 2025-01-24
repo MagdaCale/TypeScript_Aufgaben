@@ -1,3 +1,5 @@
+// Typdefinitionen bleiben gleich
+
 type Character = {
     id: number;
     name: string;
@@ -16,7 +18,7 @@ type Character = {
     location: {
         name: string;
         url: string;
-    }
+    };
 };
 
 type ApiResponse = {
@@ -29,72 +31,89 @@ type ApiResponse = {
     results: Character[];
 };
 
-
 // Container für die Ausgabe
 const outputArticle = document.querySelector<HTMLDivElement>("#output");
 const searchInput = document.querySelector<HTMLInputElement>("#searchInput");
+const loadCharactersBtn = document.querySelector<HTMLButtonElement>("#loadCharacter");
 
-// Abruf der API-Daten
-fetch("https://rickandmortyapi.com/api/character")
-    .then((response) => response.json())
-    .then((data: ApiResponse) => {
-        const characters = data.results; 
-        // - Speichere die Charaktere aus der API in einer Variablen
+// Globale Variable, um die nächste Seite zu verfolgen
+let nextPageUrl: string | null = "https://rickandmortyapi.com/api/character";
 
-        // - Rendern der Charaktere
-        renderCharacters(characters);
+function fetchAndRenderCharacters(url: string) {
+    fetch(url)
+        .then((response) => response.json())
+        .then((data: ApiResponse) => {
 
-        // EventListener zum Suchen eines Charakters
-        searchInput?.addEventListener("input", () => {
-            const searchValue = searchInput.value.trim().toLowerCase(); 
-            if (!searchValue) {
-                //- Zeigt alle Charaktere, wenn die Eingabe leer ist
-                renderCharacters(characters);
-                return;
+
+            const characters = data.results;
+
+            renderCharacters(characters); // Charaktere rendern
+
+            nextPageUrl = data.info.next; // Nächste Seite setzen
+
+            if (!nextPageUrl && loadCharactersBtn) {
+                loadCharactersBtn.textContent = "No more characters";
             }
-            const filteredCharacters = characters.filter((character) =>
-                character.name.toLowerCase().includes(searchValue)
-            )
-            renderCharacters(filteredCharacters); // - Zeige gefilterte Charaktere an
         })
-    })
-    .catch((error) => {
-        console.error("Fehler beim Laden der Charaktere:", error);
-    });
+        .catch((error) => {
+            console.error("Fehler beim Laden der Charaktere:", error);
+        });
+}
+
+// EventListener für den Load morem Button
+loadCharactersBtn?.addEventListener("click", () => {
+    if (nextPageUrl) {
+        fetchAndRenderCharacters(nextPageUrl);
+    }
+});
+
+// searchInput?.addEventListener("input", () => {
+//     const searchValue = searchInput.value.trim().toLowerCase();
+//     if(!searchValue){    
+//         fetchAndRenderCharacters("https://rickandmortyapi.com/api/character");
+//         // renderCharacters(characters);
+//         return;
+//     }
+
+//     const filteredCharacters = characters.filter((character) => {
+//         return character.name.toLowerCase().includes(searchValue);
+//     });
+//     renderCharacters(filteredCharacters);
+// });
+
+
+
 
 // Funktion für die Darstellung der Charaktere
 function renderCharacters(characters: Character[]) {
     if (outputArticle) {
-        outputArticle.innerHTML = ""
         characters.forEach((character) => {
             const characterCard = `
             <div class="card">
-           
                 <img src="${character.image}" alt="${character.name}">
-              
                 <div class="card-content">
-
-                <div class="character-name">
-                    <h3>${character.name}</h3>
-                    <span class="status-dot ${character.status.toLowerCase()}"></span>
-                    <strong>Status:</strong> ${character.status}
-                </div>
-                <div class="character-origin">
-                    <p>Origin</p>
-                    <a href="${character.origin.url}" target="_blank">
-                    <strong>${character.origin.name}</strong>
-                </a>
-                </div>
-                
-                <div class="character-gender">
-                    <p>Gender</p>
-                    <p><strong>${character.gender}</strong></p>
-                </div>
-
+                    <div class="character-name">
+                        <h3>${character.name}</h3>
+                        <span class="status-dot ${character.status.toLowerCase()}"></span>
+                        <strong>Status:</strong> ${character.status}
+                    </div>
+                    <div class="character-origin">
+                        <p>Origin</p>
+                        <a href="${character.origin.url}" target="_blank">
+                            <strong>${character.origin.name}</strong>
+                        </a>
+                    </div>
+                    <div class="character-gender">
+                        <p>Gender</p>
+                        <p><strong>${character.gender}</strong></p>
+                    </div>
                 </div>
             </div>
-            `
+            `;
             outputArticle.innerHTML += characterCard;
-        })
+        });
     }
 }
+
+// Initialer Datenabruf
+fetchAndRenderCharacters(nextPageUrl!);
