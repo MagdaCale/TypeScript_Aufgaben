@@ -41,9 +41,9 @@ let nextPageUrl: string | null = "https://rickandmortyapi.com/api/character";
 
 function fetchAndRenderCharacters(url: string) {
     fetch(url)
-        .then((response) => response.json())
-        .then((data: ApiResponse) => {
-
+    .then((response) => response.json())
+    .then((data: ApiResponse) => {
+        
 
             const characters = data.results;
 
