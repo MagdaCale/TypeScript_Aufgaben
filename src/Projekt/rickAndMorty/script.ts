@@ -1,4 +1,3 @@
-// Typdefinitionen bleiben gleich
 
 type Character = {
     id: number;
