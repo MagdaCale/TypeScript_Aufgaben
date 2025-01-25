@@ -81,7 +81,7 @@ searchInput?.addEventListener("input", () => {
 });
 
 
-// EventListener für den Load morem Button
+// EventListener für den -Load more Button-
 loadCharactersBtn?.addEventListener("click", () => {
     if (nextPageUrl) {
         fetchAndRenderCharacters(nextPageUrl);
@@ -136,5 +136,4 @@ function renderCharacters(characters: Character[]) {
     }
 }
 
-// Initialer Datenabruf
 fetchAndRenderCharacters(nextPageUrl!);
