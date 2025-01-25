@@ -39,18 +39,22 @@ const loadCharactersBtn = document.querySelector<HTMLButtonElement>("#loadCharac
 // Globale Variable, um die nächste Seite zu verfolgen
 let nextPageUrl: string | null = "https://rickandmortyapi.com/api/character";
 
+
+let allCharacters: Character[] = [];
+
 function fetchAndRenderCharacters(url: string) {
     fetch(url)
-    .then((response) => response.json())
-    .then((data: ApiResponse) => {
-        
-
+        .then((response) => response.json())
+        .then((data: ApiResponse) => {
             const characters = data.results;
 
-            renderCharacters(characters); // Charaktere rendern
+            allCharacters = [...allCharacters, ...characters]; 
 
-            nextPageUrl = data.info.next; // Nächste Seite setzen
+            renderCharacters(characters);
 
+            nextPageUrl = data.info.next;
+
+            // - wenn keine charaktere mehr vorhanden sind, wird der Button deaktiviert 
             if (!nextPageUrl && loadCharactersBtn) {
                 loadCharactersBtn.textContent = "No more characters";
             }
@@ -59,6 +63,24 @@ function fetchAndRenderCharacters(url: string) {
             console.error("Fehler beim Laden der Charaktere:", error);
         });
 }
+
+searchInput?.addEventListener("input", () => {
+    const searchValue = searchInput.value.trim().toLowerCase();
+    
+    if (!searchValue) {
+        outputArticle!.innerHTML = ''; 
+        renderCharacters(allCharacters);  
+        return;
+    }
+
+    const filteredCharacters = allCharacters.filter((character) => 
+        character.name.toLowerCase().includes(searchValue)
+    );
+    
+    outputArticle!.innerHTML = ''; 
+    renderCharacters(filteredCharacters);
+});
+
 
 // EventListener für den Load morem Button
 loadCharactersBtn?.addEventListener("click", () => {
